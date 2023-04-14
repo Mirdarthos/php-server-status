@@ -1,20 +1,19 @@
 <?php
 /*
-
- *
- * @author      Trường An Phạm Nguyễn
- * @copyright   2019, The authors
- * @license     GNU AFFERO GENERAL PUBLIC LICENSE
- *        http://www.gnu.org/licenses/agpl-3.0.html
- *
- * Jul 27, 2013
-
-Original author:
+* @Author: Mirdarthos: https://github.com/Mirdarthos
+*        ADAPTED FROM: https://github.com/truongan/php.server.status
+*
+* @author      Trường An Phạm Nguyễn
+* @copyright   2019, The authors
+* @license     GNU AFFERO GENERAL PUBLIC LICENSE
+*        http://www.gnu.org/licenses/agpl-3.0.html
+*
+* Jul 27, 2013
+-- Original author: --
 *       Disclaimer Notice(s)
 *       ex: This code is freely given to you and given "AS IS", SO if it damages
 *       your computer, formats your HDs, or burns your house I am not the one to
 *       blame
-//.
 *       Moreover, don't forget to include my copyright notices and name.
 *   +------------------------------------------------------------------------------+
 *       Author(s): Crooty.co.uk (Adam C)
