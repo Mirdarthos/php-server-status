@@ -48,66 +48,6 @@
 	<body>
 		<div class="container">
 <?php
-$data = "";
-$data .= '
-<div class="card my-2">
-	<h4 class="card-header text-center">
-	<i class="fa fa-solid fa-fw fa-window-maximize float-left button maximize"></i>
-	Service status
-	</h4>
-	<div class="card-body pb-0 contracted">
-';
-
-
-//configure script
-$timeout = "1";
-
-//set service checks
-/*
-The script will open a socket to the following service to test for connection.
-Does not test the fucntionality, just the ability to connect
-Each service can have a name, port and the Unix domain it run on (default to localhost)
-*/
-$services = array();
-
-
-$services[] = array("port" => "80",       "service" => "Web server",                  "ip" => "") ;
-$services[] = array("port" => "22",       "service" => "Open SSH",				"ip" => "") ;
-$services[] = array("port" => "80",       "service" => "Internet Connection",     "ip" => "google.com") ;
-$services[] = array("port" => "80",       "service" => "Manjaro website",     "ip" => "manjaro.org") ;
-// $services[] = array("port" => "21",       "service" => "FTP",                     "ip" => "") ;
-// $services[] = array("port" => "3306",     "service" => "MYSQL",                   "ip" => "") ;
-// $services[] = array("port" => "3000",     "service" => "Mastodon web",                   "ip" => "") ;
-// $services[] = array("port" => "4000",     "service" => "Mastodon streaming",                   "ip" => "") ;
-// $services[] = array("port" => "58846",     "service" => "Deluge",             	"ip" => "") ;
-// $services[] = array("port" => "8112",     "service" => "Deluge Web",             	"ip" => "") ;
-// $services[] = array("port" => "8083",     "service" => "Vesta panel",             	"ip" => "") ;
-
-
-//begin table for status
-$data .= "<small><table  class='table table-striped table-sm '><thead><tr><th>Service</th><th>Port</th><th>Status</th></tr></thead>";
-foreach ($services  as $service) {
-	if($service['ip']==""){
-		$service['ip'] = "localhost";
-	}
-	$data .= "<tr><td>" . $service['service'] . "</td><td>". $service['port'];
-
-	$fp = @fsockopen($service['ip'], $service['port'], $errno, $errstr, $timeout);
-	if (!$fp) {
-		$data .= "</td><td class='table-danger'>Offline </td></tr>";
-	  //fclose($fp);
-	} else {
-		$data .= "</td><td class='table-success'>Online</td></tr>";
-		fclose($fp);
-	}
-
-}
-//close table
-$data .= "</table></small>";
-$data .= '</div></div>';
-echo $data;
-
-
 /* =====================================================================
 //
 // ////////////////// SERVER INFORMATION  /////////////////////////////////
@@ -118,10 +58,10 @@ $data1 = "";
 $data1 .= '
 <div class="card mb-2">
 <h4 class="card-header text-center">
-<i class="fa fa-solid fa-fw fa-window-maximize float-left button maximize"></i>
+<i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
     Server information
 </h4>
-<div class="card-body contracted">
+<div class="card-body expanded">
 ';
 
 $data1 .= "<table  class='table table-sm mb-0'>";
@@ -245,6 +185,68 @@ $data1 .= "</table>";
 $data1 .= '  </div></div>';
 echo $data1;
 
+$data = "";
+$data .= '
+<div class="card my-2">
+	<h4 class="card-header text-center">
+	<i class="fa fa-solid fa-fw fa-window-maximize float-left button maximize"></i>
+	Service status
+	</h4>
+	<div class="card-body pb-0 contracted">
+';
+
+
+//configure script
+$timeout = "1";
+
+//set service checks
+/*
+The script will open a socket to the following service to test for connection.
+Does not test the fucntionality, just the ability to connect
+Each service can have a name, port and the Unix domain it run on (default to localhost)
+*/
+$services = array();
+
+
+$services[] = array("port" => "80",       "service" => "Web server",                  "ip" => "") ;
+$services[] = array("port" => "22",       "service" => "Open SSH",				"ip" => "") ;
+$services[] = array("port" => "80",       "service" => "Internet Connection",     "ip" => "google.com") ;
+$services[] = array("port" => "80",       "service" => "Manjaro website",     "ip" => "manjaro.org") ;
+// $services[] = array("port" => "21",       "service" => "FTP",                     "ip" => "") ;
+// $services[] = array("port" => "3306",     "service" => "MYSQL",                   "ip" => "") ;
+// $services[] = array("port" => "3000",     "service" => "Mastodon web",                   "ip" => "") ;
+// $services[] = array("port" => "4000",     "service" => "Mastodon streaming",                   "ip" => "") ;
+// $services[] = array("port" => "58846",     "service" => "Deluge",             	"ip" => "") ;
+// $services[] = array("port" => "8112",     "service" => "Deluge Web",             	"ip" => "") ;
+// $services[] = array("port" => "8083",     "service" => "Vesta panel",             	"ip" => "") ;
+
+
+//begin table for status
+$data .= "<small><table  class='table table-striped table-sm '><thead><tr><th>Service</th><th>Port</th><th>Status</th></tr></thead>";
+foreach ($services  as $service) {
+	if($service['ip']==""){
+		$service['ip'] = "localhost";
+	}
+	$data .= "<tr><td>" . $service['service'] . "</td><td>". $service['port'];
+
+	$fp = @fsockopen($service['ip'], $service['port'], $errno, $errstr, $timeout);
+	if (!$fp) {
+		$data .= "</td><td class='table-danger'>Offline </td></tr>";
+	  //fclose($fp);
+	} else {
+		$data .= "</td><td class='table-success'>Online</td></tr>";
+		fclose($fp);
+	}
+
+}
+//close table
+$data .= "</table></small>";
+$data .= '</div></div>';
+echo $data;
+
+
+
+
 /* =============================================================================
 *
 * DISPLAY BANDWIDTH STATISTIC, REQUIRE VNSTAT INSTALLED AND PROPERLY CONFIGURED.
@@ -259,10 +261,10 @@ $data2 = "";
 $data2 .= '
 <div class="card mb-2">
 	<h4 class="card-header text-center">
-	<i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
+	<i class="fa fa-solid fa-fw fa-window-maximize float-left button maximize"></i>
 		vnstat Network traffic
 	</h4>
-	<div class="card-body text-center expanded">';
+	<div class="card-body text-center contracted">';
 
 
 $data2 .="<span class=' d-block'><pre class='d-inline-block text-left'><small>";
