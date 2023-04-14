@@ -44,6 +44,7 @@ body i.fa:hover {
     background-color: lightgray;
     border-radius: .2rem;
     padding-bottom: .2rem;
+    filter: drop-shadow(0px 0px 2px #000);
 }
 pre {
   overflow-x: auto;

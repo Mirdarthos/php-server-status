@@ -1,7 +1,5 @@
 <?php
 /*
-* @Author: Mirdarthos: https://github.com/Mirdarthos
-*        ADAPTED FROM: https://github.com/truongan/php.server.status
 *
 * @author      Trường An Phạm Nguyễn
 * @copyright   2019, The authors
@@ -244,8 +242,7 @@ $data1 .= "<tr><td>Top RAM user    </td><td><small>$top_mem</small></td></tr>";
 $data1 .= "<tr><td>Top CPU user    </td><td><small>$top_cpu</small></td></tr>";
 
 $data1 .= "</table>";
-// $data1 .= '  </div></div>';
-$data1 .= '  </div>';
+$data1 .= '  </div></div>';
 echo $data1;
 
 /* =============================================================================
@@ -256,20 +253,21 @@ echo $data1;
 */
 
 
-if (!isset($_GET['showtraffic']) || $_GET['showtraffic'] ==  false) die();
+# if (!isset($_GET['showtraffic']) || $_GET['showtraffic'] ==  false) die();
 
 $data2 = "";
 $data2 .= '
 <div class="card mb-2">
 	<h4 class="card-header text-center">
+	<i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
 		vnstat Network traffic
 	</h4>
-	<div class="card-body text-center">';
+	<div class="card-body text-center expanded">';
 
 
 $data2 .="<span class=' d-block'><pre class='d-inline-block text-left'><small>";
 $traffic_arr = array();
-exec('vnstat -' . escapeshellarg( $_GET['showtraffic'] ), $traffic_arr, $status);
+exec('vnstat eth0' . escapeshellarg( $_GET['showtraffic'] ), $traffic_arr, $status);
 
 ///for testing
 /*
