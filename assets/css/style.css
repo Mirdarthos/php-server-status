@@ -1,0 +1,74 @@
+/* Animations. First time I did this. */
+@keyframes slidein-top {
+  from {
+    margin-top: -100%;
+    width: 100%;
+  }
+  to {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+
+/* Step 1: Common Properties: All required to make icons render reliably */
+.icon::before {
+  /* removed font- based rules */
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Step 2: Reference Individual Icons */
+.login::before {
+  /* using style CSS custom property */
+  font: var(--fa-font-solid);
+  content: "\f007";
+}
+
+/* Note: Make sure to include the correct weight and Unicode value for the icon */
+.tps::before {
+  /* using style CSS custom property */
+  font: var(--fa-font-solid);
+  content: "\f1ea";
+}
+
+
+body {
+    background-image: url("../img/Discworld2.jpg");
+    background-size: 100% 100%;
+}
+body i.fa:hover {
+    cursor: pointer;
+    height: 80%;
+    background-color: lightgray;
+    border-radius: .2rem;
+    padding-bottom: .2rem;
+}
+pre {
+  overflow-x: auto;
+	max-width: 60vw;
+}
+
+pre code {
+    word-wrap: normal;
+    white-space: pre;
+}
+
+.container {
+  height: 100vh;
+}
+
+.card {
+    opacity: 0.8;
+}
+
+.expanded {
+  height: auto;
+}
+
+.contracted {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
