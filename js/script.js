@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
             clicked.classList.toggle("maximize")
             infocontainer.classList.toggle("contracted")
             infocontainer.classList.toggle("expanded")
+            if(clicked.closest(".card").querySelector(".card-body").classList.contains("contracted")) {
+                clicked.closest(".card").style.opacity = "0.8"
+            } else if(clicked.closest(".card").querySelector(".card-body").classList.contains("expanded")) {
+                clicked.closest(".card").style.opacity = "1"
+            }
+
             /*
             if (window.jQuery) {
                 // jQuery is loaded
