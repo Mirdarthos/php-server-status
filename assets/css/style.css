@@ -53,6 +53,10 @@ pre code {
     opacity: 0.8;
 }
 
+.card.open {
+  opacity: 1;
+}
+
 .card-body {
   transition: all .5s ease;
 }
@@ -65,4 +69,5 @@ pre code {
   max-height: 0;
   overflow: hidden;
   padding: 0;
+  ;
 }
