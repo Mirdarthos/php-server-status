@@ -214,7 +214,7 @@ $services[] = array("port" => "80",       "service" => "Web server",            
 $services[] = array("port" => "22",       "service" => "Open SSH",				"ip" => "") ;
 $services[] = array("port" => "80",       "service" => "Internet Connection",     "ip" => "google.com") ;
 $services[] = array("port" => "80",       "service" => "Manjaro website",     "ip" => "manjaro.org") ;
-// $services[] = array("port" => "21",       "service" => "FTP",                     "ip" => "") ;
+$services[] = array("port" => "53",       "service" => "PiHole DNS",                     "ip" => "127.0.0.1") ;
 // $services[] = array("port" => "3306",     "service" => "MYSQL",                   "ip" => "") ;
 // $services[] = array("port" => "3000",     "service" => "Mastodon web",                   "ip" => "") ;
 // $services[] = array("port" => "4000",     "service" => "Mastodon streaming",                   "ip" => "") ;
