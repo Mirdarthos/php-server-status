@@ -178,10 +178,12 @@ $disks[] = array("name" => "local" , "path" => getcwd()) ;
 $data1 .= "<tr><td>Disk free        </td><td>" . get_disk_free_status($disks) . "</td></tr>";
 
 $data1 .= "<tr><td>RAM free        </td><td>". format_storage_info($total_mem *1024, $free_mem *1024, '') ."</td></tr>";
-$data1 .= "<tr><td>Top RAM user    </td><td><small>$top_mem</small></td></tr>";
-$data1 .= "<tr><td>Top CPU user    </td><td><small>$top_cpu</small></td></tr>";
-
 $data1 .= "</table>";
+$data1 .= "<div style=\"row\">";
+$data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-left\"><h4 class=\"sectiontitle\">Top RAM user    </h2><td><small>$top_mem</small></td></div>";
+$data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-left\"><h4 class=\"sectiontitle\">Top CPU user    </h2><td><small>$top_cpu</small></td></div>";
+$data1 .= "</div>";
+
 $data1 .= '  </div></div>';
 echo $data1;
 
