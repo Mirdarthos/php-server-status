@@ -53,10 +53,6 @@ pre code {
     opacity: 0.8;
 }
 
-.card-body {
-  transition: all 2s ease;
-}
-
 .expanded {
   height: auto;
 }
