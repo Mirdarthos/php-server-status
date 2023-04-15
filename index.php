@@ -271,7 +271,7 @@ $data2 .= '
 
 $data2 .="<span class=' d-block'><pre class='d-inline-block text-left'><small>";
 $traffic_arr = array();
-exec('vnstat eth0' . escapeshellarg( $_GET['showtraffic'] ), $traffic_arr, $status);
+exec('vnstat -m' . escapeshellarg( $_GET['showtraffic'] ), $traffic_arr, $status);
 
 ///for testing
 /*
