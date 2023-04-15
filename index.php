@@ -56,7 +56,7 @@
 
 $data1 = "";
 $data1 .= '
-<div class="card mb-2">
+<div class="card mb-2 open">
 <h4 class="card-header text-center">
 <i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
     Server information
