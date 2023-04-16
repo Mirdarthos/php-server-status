@@ -7,4 +7,5 @@ notice. So do not use it unless you want to get your hands dirty.
 * Adapted from: https://github.com/truongan/php.server.status
     * All credit where due goes to [TrườngAn PhạmNguyễn](https://github.com/truongan)
 
+Made poublic under the [Hippocratic License](https://firstdonoharm.dev/)
 ## CONSIDER YOURSELF WARNED!
