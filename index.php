@@ -54,15 +54,16 @@
 //
 * =======================================================================/*/
 
+$hostname = gethostname();
+$ipaddress = $_SERVER['REMOTE_ADDR'];
 $data1 = "";
-$data1 .= '
-<div class="card mb-2 open">
-<h4 class="card-header text-center">
-<i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
-    Server information
-</h4>
-<div class="card-body expanded">
-';
+$data1 .= '<div class="card mb-2 open">
+			<h4 class="card-header text-center">
+			<i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
+				Server information<br />
+				<small><em>('.$hostname.', '.$ipaddress.')</em></small>
+			</h4>
+			<div class="card-body expanded">';
 
 $data1 .= "<table  class='table table-sm mb-0'>";
 // $data1 .= "<div class='table-responsive'><table  class='table table-sm mb-0'>";
