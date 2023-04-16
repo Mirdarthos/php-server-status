@@ -77,6 +77,9 @@ $uptime = explode(' up ', $loadresult);
 $uptime = explode(',', $uptime[1]);
 $uptime = $uptime[0].', '.$uptime[1];
 
+// GET SERVER TEMPERATURE
+$temp = @exec("cat /sys/devices/virtual/thermal/thermal_zone0/temp | awk '{printf(\"%d\",$1/1000)}'  | cut --delimiter=\"%\" --fields=1 |  awk '{print $1\"°C\"}'");
+
 //Get the disk space
 function getSymbolByQuantity($bytes) {
 	$symbol = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB');
@@ -178,13 +181,13 @@ $disks[] = array("name" => "local" , "path" => getcwd()) ;
 $data1 .= "<tr><td>Disk free        </td><td>" . get_disk_free_status($disks) . "</td></tr>";
 
 $data1 .= "<tr><td>RAM free        </td><td>". format_storage_info($total_mem *1024, $free_mem *1024, '') ."</td></tr>";
+$data1 .= "<tr><td>Temperature        </td><td>". $temp ."</td></tr>";
 $data1 .= "</table>";
-$data1 .= "<div style=\"row\">";
+$data1 .= "<div class=\"row\">";
 $data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-left\"><h4 class=\"sectiontitle\">Top RAM user    </h2><td><small>$top_mem</small></td></div>";
 $data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-left\"><h4 class=\"sectiontitle\">Top CPU user    </h2><td><small>$top_cpu</small></td></div>";
 $data1 .= "</div>";
-
-$data1 .= '  </div></div>';
+$data1 .= '</div></div>';
 echo $data1;
 
 $data = "";
