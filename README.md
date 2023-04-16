@@ -6,6 +6,7 @@ notice. So do not use it unless you want to get your hands dirty.
 * Author: [Mirdarthos](https://github.com/Mirdarthos)
 * Adapted from: https://github.com/truongan/php.server.status
     * All credit where due goes to [TrườngAn PhạmNguyễn](https://github.com/truongan)
+* Background from: https://wallpaperaccess.com/ubuntu-logo
 
-Made poublic under the [Hippocratic License](https://firstdonoharm.dev/)
+Made public under the [Hippocratic License](https://firstdonoharm.dev/)
 ## CONSIDER YOURSELF WARNED!
