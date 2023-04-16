@@ -2,7 +2,7 @@
 
 * Author: [Mirdarthos](https://github.com/Mirdarthos)
 * Adapted from: https://github.com/truongan/php.server.status
- * All credit where due goes to [TrườngAn PhạmNguyễn](https://github.com/truongan)
+    * All credit where due goes to [TrườngAn PhạmNguyễn](https://github.com/truongan)
 
 I found the original page looking for something to keep an eye on my Raspberry Pi (that I use as a small server.)
 preferrably using PHP. Found the project, decided it's what I want, downloaded it, and used it for less than a day before
