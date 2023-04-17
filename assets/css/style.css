@@ -35,6 +35,10 @@ body i.fa:hover {
     padding-bottom: .2rem;
     filter: drop-shadow(0px 0px 2px #000);
 }
+body i.fa-minus {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
 pre {
   overflow-x: auto;
 	max-width: 60vw;
@@ -59,6 +63,14 @@ pre code {
 
 .card-body {
   transition: all .5s ease;
+}
+
+.card-body table {
+  margin-bottom: 1rem !important;
+}
+
+.card .section {
+  margin-top: 1rem;
 }
 
 .expanded {
