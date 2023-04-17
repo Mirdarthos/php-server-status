@@ -35,7 +35,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MiniKeeper status</title>
+	<title>[DEVELOPMENT] - MiniKeeper status</title>
 	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 	<meta content="text/html" charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,6 +154,11 @@ $i = 5;
 exec("ps -e k-rss -o rss,args | head -n $i", $tom_mem_arr, $status);
 exec("ps -e k-pcpu -o pcpu,args | head -n $i", $top_cpu_use, $status);
 
+// Get the uptime records - limited to 10 entries
+//$UPTIMES = @exec("uprecords -m 10");
+$UPTIMES = @exec("uprecords -a -B -m 10");
+//$UPTIMED_AVAIL;
+//exec('uprecords', $UPTIMES, $UPTIMED_AVAIL);
 
 $top_mem = implode('<br/>', $tom_mem_arr );
 $top_mem = "<pre class='mb-0 '><code>" . $top_mem . "</code></pre>";
@@ -179,12 +184,31 @@ $data1 .= "<tr><td>Disk free        </td><td>" . get_disk_free_status($disks) . 
 
 $data1 .= "<tr><td>RAM free        </td><td>". format_storage_info($total_mem *1024, $free_mem *1024, '') ."</td></tr>";
 $data1 .= "</table>";
-$data1 .= "<div style=\"row\">";
+$data1 .= "<div class=\"row\">";
 $data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-left\"><h4 class=\"sectiontitle\">Top RAM user    </h2><td><small>$top_mem</small></td></div>";
 $data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-left\"><h4 class=\"sectiontitle\">Top CPU user    </h2><td><small>$top_cpu</small></td></div>";
 $data1 .= "</div>";
 
+$data1 .= "<div class=\"section\">";
+$data1 .= "<div class=\"container-fluid\">";
+$data1 .= "<h5 class=\"text-center\">";
+$data1 .= "Last 10 uptime records";
+$data1 .= "</h5>";
+$data1 .= "<pre>";
+$data1 .= "<small>";
+$data1 .= print_r($UPTIMES, true);
+$data1 .= "</small>";
+$data1 .= "</pre>";
+$data1 .= "</div>";
+$data1 .= "</div>";
+
+// <i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
+
+
+
+
 $data1 .= '  </div></div>';
+
 echo $data1;
 
 $data = "";
