@@ -11,33 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clicked.classList.toggle("maximize")
             infocontainer.classList.toggle("contracted")
             infocontainer.classList.toggle("expanded")
-            /*
-            if (window.jQuery) {
-                // jQuery is loaded
-                console.log("jQuery is loaded")
-            } else {
-                // jQuery is not loaded
-                console.log("jQuery is not loaded")
-            }
-
-            /*
-            console.log("------------")
-            console.log("Clicked element's parent:")
-            console.log(parent)
-            console.log("------------")
-            
-            /*
-            console.log(clicked)
-            if (infocontainer.classList.contains("card-body")) {
-                let elementToSlide = parent.nextElementSibling
-                if (elementToSlide.classList.contains('hidden')) {
-                    elementToSlide.classList.remove('hidden')
-                } else if (!elementToSlide.classList.contains('hidden')) {
-                    elementToSlide.classList.add('hidden')
-                }
-                clicked.classList.toggle("fa-window-minimize").toggle("fa-window-maximize").toggle("minimize").toggle("maximize")
-            }
-            */
         })
 })
 }, false);
