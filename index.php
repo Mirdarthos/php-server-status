@@ -160,7 +160,11 @@ exec("ps -e k-pcpu -o pcpu,args | head -n $i", $top_cpu_use, $status);
 
 // Get the uptime records - limited to 10 entries
 //$UPTIMES = @exec("uprecords -m 10");
-$UPTIMES = @exec("uprecords -a -B -m 10");
+@exec("uprecords -a -m 10", $UPTIMEOUT);
+foreach($UPTIMEOUT as $line) {
+    $UPTIMES .= $line . "\n";
+}
+
 //$UPTIMED_AVAIL;
 //exec('uprecords', $UPTIMES, $UPTIMED_AVAIL);
 
