@@ -199,9 +199,9 @@ $data1 .= "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-lef
 $data1 .= "</div>";
 
 $data1 .= "<div class=\"section\">";
-$data1 .= "<div class=\"container-fluid\">";
+$data1 .= "<div class=\"container-fluid text-center\">";
 $data1 .= "<h5 class=\"text-center\">";
-$data1 .= "Last 10 uptime records";
+$data1 .= "10 Best uptime records";
 $data1 .= "</h5>";
 $data1 .= "<pre>";
 $data1 .= "<small>";
