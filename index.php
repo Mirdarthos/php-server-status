@@ -165,8 +165,12 @@ foreach($UPTIMEOUT as $line) {
     $UPTIMES .= $line . "\n";
 }
 
-//$UPTIMED_AVAIL;
-//exec('uprecords', $UPTIMES, $UPTIMED_AVAIL);
+//get network connections
+@exec("ss --ipv4 --summary", $CONNSTATS);
+foreach($CONNSTATS as $line) {
+    $CONNECTIONSTATS .= $line . "\n";
+}
+
 
 $top_mem = implode('<br/>', $tom_mem_arr );
 $top_mem = "<pre class='mb-0 '><code>" . $top_mem . "</code></pre>";
@@ -306,26 +310,22 @@ $data2 .="<span class=' d-block'><pre class='d-inline-block text-left'>";
 $traffic_arr = array();
 exec('vnstat eth0' . escapeshellarg( $_GET['showtraffic'] ), $traffic_arr, $status);
 
-///for testing
-/*
-$traffic = "
-enp0s20  /  monthly
 
-month        rx      |     tx      |    total    |   avg. rate
-------------------------+-------------+-------------+---------------
-Sep '18     36.60 GiB |    7.04 GiB |   43.64 GiB |  144.62 kbit/s
-Oct '18    400.69 GiB |    1.19 TiB |    1.58 TiB |    5.19 Mbit/s
-Nov '18    393.52 GiB |    2.19 TiB |    2.57 TiB |    8.72 Mbit/s
-Dec '18    507.28 GiB |    2.05 TiB |    2.55 TiB |    8.37 Mbit/s
-Jan '19    269.01 GiB |    1.39 TiB |    1.65 TiB |    7.51 Mbit/s
-------------------------+-------------+-------------+---------------
-estimated    371.92 GiB |    1.92 TiB |    2.29 TiB |
-";
-*/
 /// for real
 $traffic = implode("\n", $traffic_arr);
 
 $data2 .="$traffic</pre></span>";
+
+$data2 .= "<div>";
+$data2 .= "<h5>";
+$data2 .= "Connection statistics";
+$data2 .= "</h5>";
+$data2 .= "<div class=\"container-fluid text-center\">";
+$data2 .= "<pre>";
+$data2 .= print_r($CONNECTIONSTATS, true);
+$data2 .= "</pre>";
+$data2 .= "</div>";
+$data2 .= "</div>";
 
 echo $data2;
 ?>
