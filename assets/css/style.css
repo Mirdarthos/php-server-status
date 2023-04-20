@@ -55,9 +55,10 @@ pre code {
 
 .card {
     opacity: 0.8;
+    transition: opacity .2s ease;
 }
 
-.card.open {
+.card:hover {
   opacity: 1;
 }
 
