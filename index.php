@@ -55,13 +55,14 @@
 * =======================================================================/*/
 
 $hostname = gethostname();
-$ipaddress = $_SERVER['REMOTE_ADDR'];
+@exec("hostname -I", $ipaddress);
+
 $data1 = "";
 $data1 .= '<div class="card mb-2 open">
 			<h4 class="card-header text-center">
 			<i class="fa fa-solid fa-fw fa-window-minimize float-left button minimize"></i>
 				Server information<br />
-				<small><em>('.$hostname.', '.$ipaddress.')</em></small>
+				<small><em>('.$hostname.', '.$ipaddress[0].')</em></small>
 			</h4>
 			<div class="card-body expanded">';
 
