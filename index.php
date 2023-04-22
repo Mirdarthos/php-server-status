@@ -55,7 +55,7 @@
 * =======================================================================/*/
 
 $hostname = gethostname();
-@exec("hostname -I", $ipaddress);
+@exec("ip -brief address show | grep eth0 | awk '{print $3}'", $ipaddress);
 
 $data1 = "";
 $data1 .= '<div class="card mb-2 open">
