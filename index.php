@@ -29,7 +29,11 @@
 
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+/*
+	Using ip_in_range.php ass provided by Clousflare from https://github.com/cloudflarearchive/Cloudflare-Tools/blob/master/cloudflare/ip_in_range.php
 */
+require_once("includes/ip_in_range.php");
 ?>
 
 <!DOCTYPE html>
