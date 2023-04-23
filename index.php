@@ -33,7 +33,7 @@
 /*
 	Using ip_in_range.php ass provided by Clousflare from https://github.com/cloudflarearchive/Cloudflare-Tools/blob/master/cloudflare/ip_in_range.php
 */
-require_once("includes/ip_in_range.php");
+require_once("assets/includes/ip_in_range.php");
 ?>
 
 <!DOCTYPE html>
