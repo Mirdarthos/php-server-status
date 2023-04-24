@@ -57,7 +57,6 @@ require_once("assets/includes/ip_in_range.php");
 // ////////////////// SERVER INFORMATION  /////////////////////////////////
 //
 * =======================================================================/*/
-
 $hostname = gethostname();
 @exec("ip -brief address show | grep eth0 | awk '{print $3}'", $ipaddress);
 
@@ -210,7 +209,7 @@ $data1 .= "</div>";
 $data1 .= "<div class=\"section\">";
 $data1 .= "<div class=\"container-fluid text-center\">";
 $data1 .= "<h5 class=\"text-center\">";
-$data1 .= "10 Best uptime records";
+$data1 .= "(10) Best uptime records";
 $data1 .= "</h5>";
 $data1 .= "<pre>";
 $data1 .= "<small>";
